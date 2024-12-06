@@ -1,0 +1,31 @@
+# "org" ensures this Service is used with the correct Serverless Framework Access Key.
+org: hatio
+# "service" is the name of this project. This will also be added to your AWS resource names.
+service: operato-app
+
+plugins:
+  - serverless-offline
+
+package:
+  individually: true
+
+custom:
+  stage: ${opt:stage, env:STAGE, 'dev'}
+  serverless-offline:
+    httpPort: 3333
+    lambdaPort: 2333
+    noPrependStageInUrl: true
+    debug: true
+  # esbuild:
+  #   target: node18
+  #   minify: true
+  #   sourcemap: true
+  #   exclude: ['aws-sdk'] # Exclude large dependencies like AWS SDK from bundling if needed
+  #   external: []
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: ap-southeast-5
+
+functions: ${file(./src/operato.yml):functions}

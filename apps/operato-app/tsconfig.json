@@ -1,0 +1,36 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "include": [
+    "src/**/*.ts" // Include all TypeScript files inside src/ and subdirectories
+  ],
+  "exclude": [
+    "node_modules",
+    "dist" // Exclude 'node_modules' from being compiled
+  ],
+  "references": [
+    {
+      "path": "./tsconfig.app.json"
+    },
+    {
+      "path": "./tsconfig.spec.json"
+    }
+  ],
+  "compilerOptions": {
+    "outDir": "../../dist/apps/operato-app",// Compiled files will go inside 'apps/operato-app/dist'
+    "rootDir": "./apps/operato-app/src", // The source code is in 'apps/operato-app/src'
+    "declaration": true, // Generate declaration files (.d.ts)
+    "emitDeclarationOnly": false,
+    "sourceMap": true,
+    "lib": ["es2023"], // If using ES2023 features
+    "target": "ES2020", // Target ES2020 (compatible with Node.js 14+)
+    "forceConsistentCasingInFileNames": true,
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "esModuleInterop": true, // Allow interop with non-ESM libraries
+    "strict": true, // Enable strict type-checking
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noImplicitReturns": true,
+    "noFallthroughCasesInSwitch": true
+  }
+}

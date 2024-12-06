@@ -1,0 +1,21 @@
+{
+    "extends": "./tsconfig.json",
+    "compilerOptions": {
+      "composite": true,
+      "outDir": "../../apps/operato-app/dist/",
+      "module": "NodeNext",
+      "types": ["node"],
+      "sourceMap": true,
+      "rootDir": "./"
+    },
+    "exclude": [
+      "**/*.spec.ts",
+      "jest.config.ts",
+      "src/**/*.spec.ts",
+      "src/**/*.test.ts",
+      "node_modules",  // Exclude node_modules
+      "dist"  // Exclude dist folder from compilation
+    ],
+    "include": ["**/*.ts"], // Includes all .ts files in the current app folder
+  }
+  

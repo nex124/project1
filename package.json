@@ -2,16 +2,24 @@
   "name": "@project1/source",
   "version": "0.0.0",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "run": "serverless offline start",
+    "debug": "NODE_OPTIONS='--inspect' serverless offline start"
+  },
   "private": true,
-  "dependencies": {},
   "devDependencies": {
-    "@nx/js": "20.1.4",
+    "@ns3/nx-serverless": "^5.6.0",
+    "@nx/js": "^20.1.4",
     "@swc-node/register": "~1.9.1",
     "@swc/core": "~1.5.7",
     "@swc/helpers": "~0.5.11",
+    "@types/node": "^22.10.1",
     "nx": "20.1.4",
     "prettier": "^2.6.2",
+    "serverless": "^4.4.14",
+    "serverless-esbuild": "^1.54.6",
+    "serverless-offline": "^14.3.4",
+    "ts-node": "^10.9.2",
     "tslib": "^2.3.0",
     "typescript": "~5.5.2"
   },

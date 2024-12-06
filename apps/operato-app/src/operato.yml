@@ -1,0 +1,26 @@
+functions:
+  hello:
+    name: hello
+    handler: src/handler.hello
+    package:
+      individually: true
+      patterns:
+        - apps/operato-app/**
+        - '!apps/**'
+    architecture: arm64
+    # events:
+    #   - http:
+    #       path: hello
+    #       method: get
+  hello2:
+    name: hello2
+    handler: dist/src/handler2.hello # Refer to the compiled .js file
+    package:
+      individually: true
+      patterns:
+        - src/handler2.ts # Include the specific TypeScript file for reference
+        - '!src/handler.js'
+        - '!src/operato.yml'
+        - dist/src/handler2.js # Include the specific compiled JavaScript file
+        - '!dist/**' # Exclude everything in the `dist` folder first     
+    architecture: arm64

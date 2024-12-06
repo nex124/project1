@@ -1,0 +1,18 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+        "name": "Debug Operato-app - sls offline",
+        "type": "node",
+        "request": "launch",
+        "program": "${workspaceFolder}/node_modules/.bin/serverless",
+        "args": ["offline", "--stage", "dev"],
+        "runtimeArgs": ["-r", "ts-node/register", "-r", "tsconfig-paths/register", "--max-old-space-size=4096"],
+        "cwd": "${workspaceFolder}/apps/operato-app",
+        "outFiles": ["${workspaceFolder}/apps/operato-app/dist/src/**/*.js"],
+        "sourceMaps": true,
+        "console": "integratedTerminal",
+        "skipFiles": ["<node_internals>/**"]
+      }
+  ]
+}

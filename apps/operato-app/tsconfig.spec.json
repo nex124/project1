@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig.json",
+  "compilerOptions": {
+    "composite": true,
+    "outDir": "../../apps/operato-app/dist/",
+    "module": "NodeNext",
+    "types": ["node"],
+    "rootDir": "./"
+  },
+  "include": ["src/**/*.ts"],
+  "exclude": ["node_modules"]
+}
